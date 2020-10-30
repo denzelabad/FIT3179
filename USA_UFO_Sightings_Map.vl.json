@@ -2,15 +2,18 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 700,
   "height": 500,
-  "title": "US UFO Sightings",
+  "title": "Prevalence of UFO Sightings in the USA",
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/USA.geo.json",
-        "format": {"type": "topojson", "feature": "custom"}
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/MapUSA.geo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
       },
       "projection": {"type": "albersUsa"},
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "#74c476", "stroke": "white"}
     },
     {
       "data": {
@@ -23,7 +26,7 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {"value": 10},
-        "color": {"value": "steelblue"}
+        "color": {"value": "#626262"}
       }
     }
   ],
