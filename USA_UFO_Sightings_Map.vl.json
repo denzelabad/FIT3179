@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 700,
+  "height": 500,
+  "title": "US UFO Sightings",
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/USA.geo.json",
+        "format": {"type": "topojson", "feature": "custom"}
+      },
+      "projection": {"type": "albersUsa"},
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
+      },
+      "projection": {"type": "albersUsa"},
+      "transform": [{"filter": {"field": "country", "equal": "us"}}],
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"value": 10},
+        "color": {"value": "steelblue"}
+      }
+    }
+  ],
+  "config": {}
+}
