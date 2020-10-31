@@ -2,7 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 700,
   "height": 500,
-  "title": "Prevalence of UFO Sightings in the USA",
+  "title": "UFO Sightings in the USA",
+  "params": [{
+    "name": "Year",
+    "value": 2014,
+    "bind": {"input": "range", "min": 1906, "max": 2014, "step": 1}
+
+  }],
   "layer": [
     {
       "data": {
@@ -13,6 +19,7 @@
         }
       },
       "projection": {"type": "albersUsa"},
+      
       "mark": {"type": "geoshape", "fill": "black", "stroke": "white"}
     },
     {
@@ -20,13 +27,24 @@
         "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
       },
       "projection": {"type": "albersUsa"},
-      "transform": [{"filter": {"field": "country", "equal": "us"}}],
+      "transform": [
+        {"filter": {"field": "country", "equal": "us"}},
+        {"filter": "datum.year <= Year"}
+      ],
       "mark": "circle",
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"value": 7},
-        "color": {"value": "#329a51"}
+        "size": {"value": 8},
+        "color": {"value": "#329a51"},
+        "tooltip": [
+          {"field": "DATE", "type": "temporal", "title": "Date of Encounter"},
+          {"field": "description", "type": "nominal", "title": "Witness Observation"},
+          {"field": "UFO_shape", "type": "nominal", "title": "UFO Shape"},
+          {"field": "described_duration_of_encounter", "type": "nominal", "title": "Duration"}
+          
+
+        ]
       }
     }
   ],
