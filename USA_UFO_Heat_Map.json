@@ -37,7 +37,8 @@
             "legend": {
                 "title": "Number of sightings"
             }
-        }
+        },
+        "tooltip": {"field": "weekday", "aggregate": "count", "type": "quantitative"}
     }
   }
   
