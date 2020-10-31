@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
+    },
+    "title": "US Weekday Sightings Throughout the Year",
+    "config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 30
+        },
+        "axis": {
+            "domain": false
+        }
+    },
+    "mark": "rect",
+    "transform": [{"filter": {"field": "country", "equal": "us"}}],
+    "encoding": {
+        "x": {
+            "field": "DATE_2",
+            "timeUnit": "month",
+            "type": "ordinal",
+            "title": "Month"
+            
+        },
+        "y": {
+            "field": "DATE_2",
+            "timeUnit": "day",
+            "type": "ordinal",
+            "title": "Day"
+        },
+        "color": {
+            "field": "weekday",
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {"scheme": "greens"},
+            "legend": {
+                "title": "Number of sightings"
+            }
+        }
+    }
+  }
+  
