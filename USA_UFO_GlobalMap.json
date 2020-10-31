@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 900,
+  "height": 700,
+  "title": "Global Distribution of UFO Sightings",
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/world.geo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "world"
+        }
+      },
+      "projection": {"type": "equalEarth"},
+      "mark": {"type": "geoshape", "fill": "black", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
+      },
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"value": 2},
+        "color": {"value": "#329a51"}
+      }
+    }
+  ],
+  "config": {}
+}
+ 
