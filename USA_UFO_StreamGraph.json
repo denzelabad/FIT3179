@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500, "height": 400,
+    "data": {"url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"},
+    "title": "UFO Sightings During the Day",
+    "transform": [
+        {"filter": {"field": "country", "equal": "us"}}
+      ],
+    "mark": "area",
+    "selection": {
+      "UFO_Shape": {
+        "type": "multi", "fields": ["UFO_shape"], "bind": "legend"
+      }
+    },
+    "encoding": {
+      "x": {
+        "timeUnit": "hours", "field": "Date_time", "title": "Time"
+      },
+      "y": {
+        "aggregate": "count", "field": "weekday",
+        "stack": "center", "axis": null
+      },
+      "tooltip": [
+        {"field": "UFO_shape", "type": "nominal", "title": "UFO Shape"},
+        {"field": "Date_time", "type": "temporal", "timeUnit":"hours", "title": "Time"},
+        {"field": "weekday", "aggregate": "count", "type": "quantitative", "title": "Total Encounters"}
+        
+    ],
+      "color": {
+        "field":"UFO_shape",
+        "scale": {"scheme": "goldgreen"}
+      },
+      "opacity": {
+        "condition": {"selection": "UFO_Shape", "value": 1},
+        "value": 0.2
+      }
+      
+
+    }
+  }
+  
