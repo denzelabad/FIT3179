@@ -3,6 +3,8 @@
     "data": {
         "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
     },
+    "width": 420,
+    "height": 250,
     "config": {
         "view": {
             "strokeWidth": 0,
