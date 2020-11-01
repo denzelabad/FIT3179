@@ -3,7 +3,6 @@
     "data": {
         "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"
     },
-    "title": "US Weekday Sightings Throughout the Year",
     "config": {
         "view": {
             "strokeWidth": 0,
@@ -33,10 +32,7 @@
             "field": "weekday",
             "aggregate": "count",
             "type": "quantitative",
-            "scale": {"scheme": "greens"},
-            "legend": {
-                "title": "Number of sightings"
-            }
+            "scale": {"scheme": "greens"}
         },
         "tooltip": {"field": "weekday", "aggregate": "count", "type": "quantitative"}
     }
