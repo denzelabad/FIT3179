@@ -12,7 +12,8 @@
         },
         "axis": {
             "domain": false
-        }
+        },
+        "font": "Aldrich"
     },
     "mark": "rect",
     "transform": [{"filter": {"field": "country", "equal": "us"}}],

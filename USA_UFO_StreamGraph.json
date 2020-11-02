@@ -3,6 +3,9 @@
     "width": 400, "height": 400,
     "data": {"url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"},
     "title": "UFO Sightings During the Day",
+    "config":{
+      "font": "Aldrich"
+    },
     "transform": [
         {"filter": {"field": "country", "equal": "us"}}
       ],
@@ -37,5 +40,6 @@
       
 
     }
+    
   }
   
