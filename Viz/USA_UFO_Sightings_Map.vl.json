@@ -11,7 +11,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/MapUSA.geo.json",
+        "url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/Data/MapUSA.geo.json",
         "format": {
           "type": "topojson",
           "feature": "states"
