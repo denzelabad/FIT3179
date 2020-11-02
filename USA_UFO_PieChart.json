@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "description": "A simple radial chart with embedded data.",
+    "title":"Encounters in US vs Rest of the World",
+    "data": {"url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"},
+    "layer": [{
+        "mark": "arc",
+        "selection": {
+            "Country": {
+              "type": "multi", "fields": ["country"], "init":{"country": "us"}, "bind": "legend"
+            }
+          },
+        "encoding": {
+          "theta": {"field": "weekday", "aggregate":"count", "type": "quantitative"},
+          "color": {"field": "country", "type": "nominal","scale": {"scheme": "goldgreen"}, "legend": {"title":null}},
+          "opacity": {
+            "condition": {"selection": "Country", "value": 1},
+            "value": 0.4
+          },
+
+          "tooltip": [
+              {"field": "weekday", "aggregate": "count", "type": "quantitative", "title":"Total Encounters"},
+              {"field": "country", "type": "nominal", "title":"Country"}
+            ]
+        },
+        "view": {"stroke": null}
+    }],
+    "config": {
+        "style": {
+          "cell": {
+            "stroke": "transparent"
+          }
+        }
+      }
+  }
