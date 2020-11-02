@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "width": 350, "height": 300,
+    "width": 400, "height": 400,
     "data": {"url": "https://raw.githubusercontent.com/denzelabad/FIT3179/main/ufo_sighting_data.csv"},
     "title": "UFO Sightings During the Day",
     "transform": [
